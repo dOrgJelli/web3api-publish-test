@@ -22,7 +22,7 @@ jobs:
 
       - uses: actions/github-script@0.8.0
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
+          github-token: ${{secrets.WEB3_API_BUILD_BOT_PAT}}
           script: |
             github.issues.createComment({
               issue_number: context.issue.number,
@@ -45,10 +45,10 @@ jobs:
 
       - name: Set Git Identity
         run: |
-          git config --global user.name 'release-bot'
-          git config --global user.email 'release-bot@users.noreply.github.com'
+          git config --global user.name 'web3-api-build-bot'
+          git config --global user.email 'web3-api-build-bot@users.noreply.github.com'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.WEB3_API_BUILD_BOT_PAT }}
 
       - name: Apply VERSION & Commit
         run: yarn run version:apply --yes
@@ -57,11 +57,14 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.WEB3_API_BUILD_BOT_PAT }}
+          push-to-fork: web3-api-build-bot/monorepo
+          branch: "release/${{env.VERSION}}"
           commit-message: "Update v${{env.VERSION}}"
           committer: GitHub <noreply@github.com>
           author: "${{ github.actor }} <${{github.actor}}@users.noreply.github.com>"
           title: 'v${{env.VERSION}}'
+          labels: "Web3API-Release"
           body: |
             ## Web3API ${{env.VERSION}}
 
@@ -76,13 +79,10 @@ jobs:
             ### Bug Fixes
 
             - [ ] TODO
-          labels: "Web3API-Release"
-          branch: "release/${{env.VERSION}}"
-          request-to-parent: false
 
       - uses: actions/github-script@0.8.0
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
+          github-token: ${{secrets.WEB3_API_BUILD_BOT_PAT}}
           script: |
             github.issues.createComment({
               issue_number: context.issue.number,
