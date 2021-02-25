@@ -24,7 +24,7 @@
     "clean": "rimraf ./**/node_modules ./**/build ./**/coverage",
     "version:apply": "lerna version $(cat VERSION) --exact --no-git-tag-version",
     "postversion:apply": "git add . && git commit -m \"build(release): migrate to `cat ./VERSION`\"",
-    "publish:gh": "lerna publish --yes --registry https://npm.pkg.github.com"
+    "publish:gh": "lerna publish from-git --yes --registry https://npm.pkg.github.com"
   },
   "devDependencies": {
     "lerna": "3.22.1",  
