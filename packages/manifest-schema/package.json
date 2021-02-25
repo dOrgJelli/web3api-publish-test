@@ -3,5 +3,8 @@
   "version": "0.0.1-prealpha.33",
   "license": "MIT",
   "main": "./package.json",
-  "gitHead": "02b46fbf4546108f606644d49286f6d93a371eb9"
+  "gitHead": "02b46fbf4546108f606644d49286f6d93a371eb9",
+  "publishConfig": {
+    "access": "public"
+  }
 }
