@@ -55,7 +55,7 @@ jobs:
         if: ${{env.TAG_EXISTS}} == 'false'
         uses: azu/action-package-version-to-git-tag@v1
         with:
-          version: ${{ env.CURRENT_VERSION }}
+          version: ${{ env.RELEASE_VERSION }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           github_repo: ${{ github.repository }}
           git_commit_sha: ${{ github.event.pull_request.merge_commit_sha }}
