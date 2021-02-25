@@ -75,6 +75,13 @@ jobs:
           draft: false
           prerelease: false
 
+      - name: Publish Node Packages To GitHub
+        if: ${{env.TAG_EXISTS}} == 'false'
+        run: yarn publish:gh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - uses: actions/github-script@0.8.0
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}

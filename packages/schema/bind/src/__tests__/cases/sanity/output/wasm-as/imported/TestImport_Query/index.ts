@@ -1,7 +1,7 @@
 import {
   w3_subinvoke,
   Nullable
-} from "@web3api/wasm-as";
+} from "@dorgjelli-test/wasm-as";
 import {
   serializeimportedMethodArgs,
   deserializeimportedMethodResult,

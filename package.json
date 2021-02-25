@@ -14,16 +14,17 @@
     ]
   },
   "scripts": {
-    "build": "lerna run build --no-private --ignore @web3api/cli && yarn build:cli",
-    "build:cli": "lerna run build --scope @web3api/cli",
+    "build": "lerna run build --no-private --ignore @dorgjelli-test/cli && yarn build:cli",
+    "build:cli": "lerna run build --scope @dorgjelli-test/cli",
     "lint": "lerna run lint",
     "lint:fix": "lerna run lint -- --fix",
     "lint:ci": "lerna run lint --parallel",
     "test": "lerna run test --no-private",
     "test:ci": "lerna run test:ci --no-private --parallel",
     "clean": "rimraf ./**/node_modules ./**/build ./**/coverage",
-    "version:apply": "lerna version $(cat VERSION) --exact --no-git-tag-version",
-    "postversion:apply": "git add . && git commit -m \"build(release): migrate to `cat ./VERSION`\""
+    "version:apply": "lerna version $(cat VERSION) --exact --no-git-tag-version --yes",
+    "postversion:apply": "git add . && git commit -m \"build(release): migrate to `cat ./VERSION`\"",
+    "publish:gh": "lerna publish from-package --yes --registry https://npm.pkg.github.com"
   },
   "devDependencies": {
     "lerna": "3.22.1",  

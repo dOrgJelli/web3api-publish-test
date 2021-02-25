@@ -1,6 +1,6 @@
 import fs from "fs";
 import YAML from "js-yaml";
-import { Manifest, deserializeManifest } from "@web3api/core-js";
+import { Manifest, deserializeManifest } from "@dorgjelli-test/core-js";
 
 export class Web3ApiManifest {
   public static load(manifestPath: string): Manifest {

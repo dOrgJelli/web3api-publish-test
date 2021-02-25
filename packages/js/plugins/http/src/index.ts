@@ -10,7 +10,7 @@ import {
   Plugin,
   PluginModules,
   PluginManifest,
-} from "@web3api/core-js";
+} from "@dorgjelli-test/core-js";
 
 export class HttpPlugin extends Plugin {
   constructor() {

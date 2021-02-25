@@ -1,6 +1,6 @@
 {
-  "name": "@web3api/examples-simple-storage",
-  "version": "0.0.1-prealpha.15",
+  "name": "@dorgjelli-test/examples-simple-storage",
+  "version": "0.0.1-prealpha.18",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -9,9 +9,9 @@
     "test:env:down": "w3 test-env down"
   },
   "devDependencies": {
-    "@web3api/cli": "0.0.1-prealpha.15",
-    "@web3api/ethereum-plugin-js": "0.0.1-prealpha.15",
-    "@web3api/wasm-as": "0.0.1-prealpha.15",
+    "@dorgjelli-test/cli": "0.0.1-prealpha.18",
+    "@dorgjelli-test/ethereum-plugin-js": "0.0.1-prealpha.18",
+    "@dorgjelli-test/wasm-as": "0.0.1-prealpha.18",
     "ethers": "5.0.8",
     "js-yaml": "3.14.0"
   }

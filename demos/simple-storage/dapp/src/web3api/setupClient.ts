@@ -1,7 +1,7 @@
-import { Uri, UriRedirect, Web3ApiClient } from "@web3api/client-js";
-import { EnsPlugin } from "@web3api/ens-plugin-js";
-import { EthereumPlugin } from "@web3api/ethereum-plugin-js";
-import { IpfsPlugin } from "@web3api/ipfs-plugin-js";
+import { Uri, UriRedirect, Web3ApiClient } from "@dorgjelli-test/client-js";
+import { EnsPlugin } from "@dorgjelli-test/ens-plugin-js";
+import { EthereumPlugin } from "@dorgjelli-test/ethereum-plugin-js";
+import { IpfsPlugin } from "@dorgjelli-test/ipfs-plugin-js";
 
 export async function setupWeb3ApiClient(): Promise<Web3ApiClient> {
   const ethereum = (window as any).ethereum;

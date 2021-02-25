@@ -8,7 +8,7 @@ import {
   Plugin,
   PluginManifest,
   PluginModules,
-} from "@web3api/core-js";
+} from "@dorgjelli-test/core-js";
 import { ethers } from "ethers";
 import { Base58 } from "@ethersproject/basex";
 import { getAddress } from "@ethersproject/address";

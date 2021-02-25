@@ -2,7 +2,7 @@
 
 var fs = require('fs');
 var path = require('path');
-var package_name = '@web3api/client-js'
+var package_name = '@dorgjelli-test/client-js'
 var package_dir = path.dirname(require.resolve(package_name))
 var src = path.join(package_dir, 'thread.js')
 var dst = path.join(process.cwd(), process.argv[2], 'thread.js')
