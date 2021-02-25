@@ -22,9 +22,9 @@
     "test": "lerna run test --no-private",
     "test:ci": "lerna run test:ci --no-private --parallel",
     "clean": "rimraf ./**/node_modules ./**/build ./**/coverage",
-    "version:apply": "lerna version $(cat VERSION) --exact --no-git-tag-version --yes",
+    "version:apply": "npx lerna version $(cat VERSION) --exact --no-git-tag-version --yes",
     "postversion:apply": "git add . && git commit -m \"build(release): migrate to `cat ./VERSION`\"",
-    "publish:npm": "lerna publish from-package --yes"
+    "publish:npm": "npx lerna publish from-package --yes"
   },
   "devDependencies": {
     "lerna": "3.22.1",  
