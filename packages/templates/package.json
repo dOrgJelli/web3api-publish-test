@@ -4,5 +4,8 @@
   "version": "0.0.1-prealpha.45",
   "description": "Web3API Templates",
   "license": "MIT",
-  "gitHead": "7346adaf5adb7e6bbb70d9247583e995650d390a"
+  "gitHead": "7346adaf5adb7e6bbb70d9247583e995650d390a",
+  "publishConfig": {
+    "access": "public"
+  }
 }

@@ -4,12 +4,9 @@
   "version": "independent",
   "command": {
     "publish": {
-      "packages": [
-        "./packages/wasm/**/*",
-        "./packages/schema/**/*",
-        "./packages/manifest-schema/*",
-        "./packages/js/**/*",
-        "./packages/test-env/*"
+      "ignore": [
+        "@dorgjelli-test/example-*",
+        "templates-*"
       ]
     }
   }
