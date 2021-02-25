@@ -79,6 +79,7 @@ jobs:
         run: |
           npm config set registry https://registry.npmjs.org/
           npm config set //registry.npmjs.org/:_authToken=${{secrets.WEB3_API_BUILD_BOT_NPM_PAT}}
+          echo $(npm whoami)
 
       - name: Install dependencies
         run: yarn install --nonInteractive --frozen-lockfile
