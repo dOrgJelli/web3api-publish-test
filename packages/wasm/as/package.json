@@ -3,6 +3,12 @@
   "version": "0.0.1-prealpha.46",
   "license": "MIT",
   "main": "./assembly/index.ts",
+  "files": [
+    "build",
+    "assembly",
+    "tsconfig.json",
+    "as-pect.config.js"
+  ],
   "scripts": {
     "build": "asc ./assembly/index.ts -o ./build/index.wasm -d ./build/index.d.ts",
     "lint": "eslint --color --ext .ts assembly/",

@@ -87,7 +87,7 @@ jobs:
       - name: Build packages
         run: yarn build
 
-      - name: Publish Node Packages To GitHub
+      - name: Publish Node Packages To NPM
         if: ${{env.TAG_EXISTS}} == 'false'
         run: yarn publish:npm
         env:

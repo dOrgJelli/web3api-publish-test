@@ -3,6 +3,10 @@
   "version": "0.0.1-prealpha.46",
   "license": "MIT",
   "main": "build/index.js",
+  "files": [
+    "build",
+    "bin"
+  ],
   "bin": {
     "web3api-worker-install": "bin/web3api-worker-install"
   },
