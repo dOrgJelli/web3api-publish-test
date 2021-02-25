@@ -5,7 +5,8 @@
   "command": {
     "publish": {
       "ignore": "root",
-      "npmClient": "npm"
+      "npmClient": "npm",
+      "npmClientArgs": ["--access", "public"]
     }
   }
 }
