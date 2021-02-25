@@ -58,10 +58,12 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v3
         with:
-          base: ${{ github.event.pull_request.base.ref }}
           token: ${{ secrets.WEB3_API_BUILD_BOT_PAT }}
           push-to-fork: ${{env.USER}}/${{github.repository}}
-          branch: "release/${{env.RELEASE_VERSION}}"
+          branch: release/${{env.RELEASE_VERSION}}
+          base: ${{ github.event.pull_request.base.ref }}
+          committer: GitHub <noreply@github.com>
+          author: ${{env.USER}} <${{env.USER}}@users.noreply.github.com>
           commit-message: "${{env.RELEASE_VERSION}}"
           title: 'Web3API ${{env.RELEASE_VERSION}}'
           labels: "Web3API-Release"
