@@ -1,5 +1,12 @@
 {
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "version": "independent"
+  "version": "independent",
+  "command": {
+    "publish": {
+      "ignore": "root",
+      "npmClient": "npm",
+      "npmClientArgs": ["--access", "public"]
+    }
+  }
 }
