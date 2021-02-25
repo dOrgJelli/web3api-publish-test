@@ -1,5 +1,6 @@
 {
   "name": "@dorgjelli-test/example-simple-storage-dapp",
+  "private": true,
   "version": "0.0.1-prealpha.42",
   "dependencies": {
     "@dorgjelli-test/client-js": "0.0.1-prealpha.42",
@@ -43,8 +44,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
