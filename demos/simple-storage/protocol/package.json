@@ -1,6 +1,6 @@
 {
   "name": "@dorgjelli-test/examples-simple-storage",
-  "version": "0.0.1-prealpha.25",
+  "version": "0.0.1-prealpha.26",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -9,9 +9,9 @@
     "test:env:down": "w3 test-env down"
   },
   "devDependencies": {
-    "@dorgjelli-test/cli": "0.0.1-prealpha.25",
-    "@dorgjelli-test/ethereum-plugin-js": "0.0.1-prealpha.25",
-    "@dorgjelli-test/wasm-as": "0.0.1-prealpha.25",
+    "@dorgjelli-test/cli": "0.0.1-prealpha.26",
+    "@dorgjelli-test/ethereum-plugin-js": "0.0.1-prealpha.26",
+    "@dorgjelli-test/wasm-as": "0.0.1-prealpha.26",
     "ethers": "5.0.8",
     "js-yaml": "3.14.0"
   }
