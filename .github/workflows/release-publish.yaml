@@ -81,7 +81,7 @@ jobs:
       - name: Set NPM Auth
         run: |
           echo "${{secrets.WEB3_API_BUILD_BOT_NPM_PAT}}" >> .npmrc
-          git update-index --assume-unchanged .npmrc
+          git update-index --assume-unchanged ./.npmrc
 
       - name: Publish Node Packages To GitHub
         if: ${{env.TAG_EXISTS}} == 'false'
