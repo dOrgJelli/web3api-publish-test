@@ -59,7 +59,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.WEB3_API_BUILD_BOT_PAT }}
-          push-to-fork: ${{env.USER}}/${{github.repository}}
+          push-to-fork: ${{env.USER}}/${{github.event.pull_request.repo.name}}
           branch: release/${{env.RELEASE_VERSION}}
           base: ${{ github.event.pull_request.base.ref }}
           committer: GitHub <noreply@github.com>
@@ -90,5 +90,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '**Release PR Created (`${{env.RELEASE_VERSION}}`):** https://github.com/${{ github.repository }}/pull/${{ steps.cpr.outputs.pull-request-number }}'
+              body: '**Release PR Created (`${{env.RELEASE_VERSION}}`):** https://github.com/${{env.USER}}/${{github.event.pull_request.repo.name}}/pull/${{ steps.cpr.outputs.pull-request-number }}'
             })
