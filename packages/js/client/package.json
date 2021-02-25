@@ -43,7 +43,7 @@
     "webpack-cli": "4.5.0",
     "worker-plugin": "5.0.0"
   },
-  "gitHead": "63f6de7b307ade535beac5dc246d36a308ecc9ef",
+  "gitHead": "7346adaf5adb7e6bbb70d9247583e995650d390a",
   "publishConfig": {
     "access": "public"
   }

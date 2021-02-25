@@ -22,7 +22,7 @@
     "ts-node": "8.10.2",
     "typescript": "3.9.7"
   },
-  "gitHead": "63f6de7b307ade535beac5dc246d36a308ecc9ef",
+  "gitHead": "7346adaf5adb7e6bbb70d9247583e995650d390a",
   "publishConfig": {
     "access": "public"
   }
