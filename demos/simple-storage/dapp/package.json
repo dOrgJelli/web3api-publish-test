@@ -1,9 +1,9 @@
 {
   "name": "@dorgjelli-test/example-simple-storage-dapp",
   "private": true,
-  "version": "0.0.1-prealpha.45",
+  "version": "0.0.1-prealpha.46",
   "dependencies": {
-    "@dorgjelli-test/client-js": "0.0.1-prealpha.45",
+    "@dorgjelli-test/client-js": "0.0.1-prealpha.46",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-lottie": "1.2.3",

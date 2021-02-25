@@ -1,9 +1,11 @@
 {
   "name": "@dorgjelli-test/schema-bind",
-  "version": "0.0.1-prealpha.45",
+  "version": "0.0.1-prealpha.46",
   "license": "MIT",
   "main": "build/index.js",
-  "files": ["build"],
+  "files": [
+    "build"
+  ],
   "scripts": {
     "build": "rimraf ./build && tsc --project tsconfig.build.json && yarn copy:templates",
     "lint": "eslint --color --ext .ts src/",
@@ -13,7 +15,7 @@
     "copy:templates": "copyfiles -u 1 src/**/*.mustache build/"
   },
   "dependencies": {
-    "@dorgjelli-test/schema-parse": "0.0.1-prealpha.45",
+    "@dorgjelli-test/schema-parse": "0.0.1-prealpha.46",
     "mustache": "4.0.1"
   },
   "devDependencies": {

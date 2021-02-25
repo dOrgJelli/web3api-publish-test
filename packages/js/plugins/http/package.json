@@ -1,7 +1,7 @@
 {
   "name": "@dorgjelli-test/http-plugin-js",
   "description": "HTTP plugin enabling invocating http methods through web3api",
-  "version": "0.0.1-prealpha.45",
+  "version": "0.0.1-prealpha.46",
   "license": "MIT",
   "main": "build/index.js",
   "files": [
@@ -16,11 +16,11 @@
     "test:watch": "jest --watch --passWithNoTests --verbose"
   },
   "dependencies": {
-    "@dorgjelli-test/core-js": "0.0.1-prealpha.45",
+    "@dorgjelli-test/core-js": "0.0.1-prealpha.46",
     "axios": "0.21.1"
   },
   "devDependencies": {
-    "@dorgjelli-test/client-js": "0.0.1-prealpha.45",
+    "@dorgjelli-test/client-js": "0.0.1-prealpha.46",
     "@types/jest": "26.0.8",
     "jest": "26.2.2",
     "nock": "13.0.7",
