@@ -24,7 +24,7 @@
     "clean": "rimraf ./**/node_modules ./**/build ./**/coverage",
     "version:apply": "npx lerna version $(cat VERSION) --exact --no-git-tag-version --yes",
     "postversion:apply": "git add . && git commit -m \"build(release): migrate to `cat ./VERSION`\"",
-    "publish:npm": "lerna publish --no-private from-package --yes --registry https://registry.npmjs.org/ --no-verify-access"
+    "publish:npm": "lerna publish --no-private --yes --registry https://registry.npmjs.org/ --no-verify-access"
   },
   "devDependencies": {
     "lerna": "3.22.1",  
