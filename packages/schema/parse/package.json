@@ -1,6 +1,6 @@
 {
   "name": "@dorgjelli-test/schema-parse",
-  "version": "0.0.1-prealpha.29",
+  "version": "0.0.1-prealpha.30",
   "license": "MIT",
   "main": "build",
   "files": [

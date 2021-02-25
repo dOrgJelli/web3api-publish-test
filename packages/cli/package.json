@@ -1,6 +1,6 @@
 {
   "name": "@dorgjelli-test/cli",
-  "version": "0.0.1-prealpha.29",
+  "version": "0.0.1-prealpha.30",
   "license": "MIT",
   "bin": {
     "w3": "bin/w3"
@@ -10,14 +10,14 @@
     "lint": "eslint --color --ext .ts src/"
   },
   "dependencies": {
-    "@dorgjelli-test/client-js": "0.0.1-prealpha.29",
-    "@dorgjelli-test/client-test-env": "0.0.1-prealpha.29",
-    "@dorgjelli-test/core-js": "0.0.1-prealpha.29",
-    "@dorgjelli-test/ens-plugin-js": "0.0.1-prealpha.29",
-    "@dorgjelli-test/ethereum-plugin-js": "0.0.1-prealpha.29",
-    "@dorgjelli-test/ipfs-plugin-js": "0.0.1-prealpha.29",
-    "@dorgjelli-test/schema-bind": "0.0.1-prealpha.29",
-    "@dorgjelli-test/schema-compose": "0.0.1-prealpha.29",
+    "@dorgjelli-test/client-js": "0.0.1-prealpha.30",
+    "@dorgjelli-test/client-test-env": "0.0.1-prealpha.30",
+    "@dorgjelli-test/core-js": "0.0.1-prealpha.30",
+    "@dorgjelli-test/ens-plugin-js": "0.0.1-prealpha.30",
+    "@dorgjelli-test/ethereum-plugin-js": "0.0.1-prealpha.30",
+    "@dorgjelli-test/ipfs-plugin-js": "0.0.1-prealpha.30",
+    "@dorgjelli-test/schema-bind": "0.0.1-prealpha.30",
+    "@dorgjelli-test/schema-compose": "0.0.1-prealpha.30",
     "assemblyscript": "0.17.14",
     "axios": "0.19.2",
     "chalk": "4.1.0",
