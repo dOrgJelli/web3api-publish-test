@@ -13,5 +13,8 @@
     "@dorgjelli-test/wasm-as": "0.0.1-prealpha.33",
     "ethers": "5.0.8",
     "js-yaml": "3.14.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
