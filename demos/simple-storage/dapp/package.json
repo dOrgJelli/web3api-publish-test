@@ -1,9 +1,9 @@
 {
-  "name": "@web3api/example-simple-storage-dapp",
+  "name": "@dorgjelli-test/example-simple-storage-dapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@web3api/client-js": "0.0.1-prealpha.1",
+    "@dorgjelli-test/client-js": "0.0.1-prealpha.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",

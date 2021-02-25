@@ -2,7 +2,7 @@ import {
   Read,
   Write,
   Nullable
-} from "@web3api/wasm-as";
+} from "@dorgjelli-test/wasm-as";
 import {
   serializeTestImport_AnotherObject,
   deserializeTestImport_AnotherObject,

@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import Lottie from "react-lottie";
-import { Web3ApiClient } from "@web3api/client-js";
+import { Web3ApiClient } from "@dorgjelli-test/client-js";
 
 import { setupWeb3ApiClient } from "./web3api/setupClient";
 import {

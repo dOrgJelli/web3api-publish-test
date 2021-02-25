@@ -19,7 +19,7 @@ import {
   Client,
   ApiResolver,
   InvokableModules,
-} from "@web3api/core-js";
+} from "@dorgjelli-test/core-js";
 import path from "path";
 import * as MsgPack from "@msgpack/msgpack";
 

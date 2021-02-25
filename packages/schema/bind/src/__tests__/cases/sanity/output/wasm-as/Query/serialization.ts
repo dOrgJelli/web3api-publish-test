@@ -1,11 +1,11 @@
-import { Nullable } from "@web3api/wasm-as";
+import { Nullable } from "@dorgjelli-test/wasm-as";
 import {
   Read,
   ReadDecoder,
   WriteSizer,
   WriteEncoder,
   Write
-} from "@web3api/wasm-as";
+} from "@dorgjelli-test/wasm-as";
 import * as Objects from "..";
 
 export class Input_queryMethod {

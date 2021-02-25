@@ -1,7 +1,7 @@
 import { HttpPlugin } from ".";
 import { Request } from "./types";
 
-import { PluginModule } from "@web3api/core-js";
+import { PluginModule } from "@dorgjelli-test/core-js";
 
 export const query = (http: HttpPlugin): PluginModule => ({
   get: async (input: { url: string; request: Request }) => {
