@@ -66,9 +66,10 @@ jobs:
           author: ${{env.USER}} <${{env.USER}}@users.noreply.github.com>
           commit-message: "${{env.RELEASE_VERSION}}"
           title: 'Web3API ${{env.RELEASE_VERSION}}'
-          labels: "Web3API-Release"
           body: |
             ## Web3API ${{env.RELEASE_VERSION}}
+
+            TODO: Add "Web3API-Release" Label
 
             ### Breaking Changes
 
