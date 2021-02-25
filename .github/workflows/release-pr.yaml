@@ -7,9 +7,10 @@ jobs:
   Release-PR:
     if: |
       github.event.issue.pull_request &&
+      github.event.pull_request.merged_at &&
       github.event.comment.author_association == 'OWNER' &&
       startsWith(github.event.comment.body, '/workflows/release-pr')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
