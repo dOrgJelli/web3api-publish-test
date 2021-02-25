@@ -1,6 +1,6 @@
 {
   "name": "@dorgjelli-test/manifest-schema",
-  "version": "0.0.1-prealpha.46",
+  "version": "0.0.1-prealpha.47",
   "license": "MIT",
   "main": "./package.json",
   "gitHead": "7346adaf5adb7e6bbb70d9247583e995650d390a",
