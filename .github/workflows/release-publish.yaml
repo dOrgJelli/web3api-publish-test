@@ -87,6 +87,8 @@ jobs:
       - name: Publish Node Packages To GitHub
         if: ${{env.TAG_EXISTS}} == 'false'
         run: yarn publish:npm
+        env:
+          NPM_AUTH_TOKEN: ${{secrets.WEB3_API_BUILD_BOT_NPM_PAT}}
 
       - uses: actions/github-script@0.8.0
         with:
