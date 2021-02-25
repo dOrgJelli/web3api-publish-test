@@ -1,6 +1,6 @@
 {
   "name": "@dorgjelli-test/wasm-as",
-  "version": "0.0.1-prealpha.24",
+  "version": "0.0.1-prealpha.25",
   "license": "MIT",
   "main": "./assembly/index.ts",
   "scripts": {
