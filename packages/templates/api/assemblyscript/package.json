@@ -1,6 +1,6 @@
 {
   "name": "templates-api-assemblyscript",
-  "version": "0.0.1-prealpha.33",
+  "version": "0.0.1-prealpha.41",
   "license": "MIT",
   "scripts": {
     "build": "w3 build",
@@ -8,8 +8,8 @@
     "test:env:down": "w3 test-env down"
   },
   "devDependencies": {
-    "@dorgjelli-test/cli": "0.0.1-prealpha.33",
-    "@dorgjelli-test/ethereum-plugin-js": "0.0.1-prealpha.33",
+    "@dorgjelli-test/cli": "0.0.1-prealpha.41",
+    "@dorgjelli-test/ethereum-plugin-js": "0.0.1-prealpha.41",
     "@dorgjelli-test/wasm-as": "0.0.1-prealpha.33",
     "ethers": "5.0.8",
     "js-yaml": "3.14.0"

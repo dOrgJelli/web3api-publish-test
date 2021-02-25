@@ -1,7 +1,7 @@
 {
   "name": "@dorgjelli-test/http-plugin-js",
   "description": "HTTP plugin enabling invocating http methods through web3api",
-  "version": "0.0.1-prealpha.33",
+  "version": "0.0.1-prealpha.41",
   "license": "MIT",
   "main": "build/index.js",
   "scripts": {

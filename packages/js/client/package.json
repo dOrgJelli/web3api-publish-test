@@ -17,9 +17,9 @@
   },
   "dependencies": {
     "@dorgjelli-test/core-js": "0.0.1-prealpha.41",
-    "@dorgjelli-test/ens-plugin-js": "0.0.1-prealpha.33",
-    "@dorgjelli-test/ethereum-plugin-js": "0.0.1-prealpha.33",
-    "@dorgjelli-test/ipfs-plugin-js": "0.0.1-prealpha.33",
+    "@dorgjelli-test/ens-plugin-js": "0.0.1-prealpha.41",
+    "@dorgjelli-test/ethereum-plugin-js": "0.0.1-prealpha.41",
+    "@dorgjelli-test/ipfs-plugin-js": "0.0.1-prealpha.41",
     "@dorgjelli-test/schema-parse": "0.0.1-prealpha.41",
     "@msgpack/msgpack": "2.3.0",
     "graphql": "^15.4.0",
@@ -27,7 +27,7 @@
     "web-worker": "1.0.0"
   },
   "devDependencies": {
-    "@dorgjelli-test/cli": "0.0.1-prealpha.33",
+    "@dorgjelli-test/cli": "0.0.1-prealpha.41",
     "@types/jest": "26.0.8",
     "@types/js-yaml": "3.11.1",
     "@types/semver": "^7.3.4",

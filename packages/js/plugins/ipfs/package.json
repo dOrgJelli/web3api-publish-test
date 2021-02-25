@@ -1,6 +1,6 @@
 {
   "name": "@dorgjelli-test/ipfs-plugin-js",
-  "version": "0.0.1-prealpha.33",
+  "version": "0.0.1-prealpha.41",
   "license": "MIT",
   "main": "build/index.js",
   "scripts": {
