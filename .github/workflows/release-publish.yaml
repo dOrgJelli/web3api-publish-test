@@ -52,12 +52,28 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create Git Tag
-        uses: pkgdeps/git-tag-action@v2
+        if: ${{env.TAG_EXISTS}} == 'false'
+        uses: azu/action-package-version-to-git-tag@v1
         with:
+          version: ${{ env.CURRENT_VERSION }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          github_repo: ${{github.repository}}
-          git_commit_sha: ${{github.event.pull_request.merge_commit_sha}}
-          version: "${{env.RELEASE_VERSION}}"
+          github_repo: ${{ github.repository }}
+          git_commit_sha: ${{ github.event.pull_request.merge_commit_sha }}
+
+      - name: Create Release
+        id: create_release
+        if: ${{env.TAG_EXISTS}} == 'false' && github.event.pull_request.merged == true
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.RELEASE_VERSION }}
+          # Copy Pull Request's tile and body to Release Note
+          release_name: ${{ github.event.pull_request.title }}
+          body: |
+            ${{ github.event.pull_request.body }}
+          draft: false
+          prerelease: false
 
       - uses: actions/github-script@0.8.0
         with:
