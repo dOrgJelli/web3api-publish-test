@@ -7,7 +7,7 @@ jobs:
   Release-PR:
     if: |
       github.event.issue.pull_request &&
-      github.event.pull_request.merged_at &&
+      github.event.pull_request.merged &&
       github.event.comment.author_association == 'OWNER' &&
       startsWith(github.event.comment.body, '/workflows/release-pr')
     runs-on: ubuntu-18.04
