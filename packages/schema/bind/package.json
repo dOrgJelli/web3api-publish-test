@@ -1,6 +1,6 @@
 {
   "name": "@dorgjelli-test/schema-bind",
-  "version": "0.0.1-prealpha.19",
+  "version": "0.0.1-prealpha.20",
   "license": "MIT",
   "main": "build/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "copy:templates": "copyfiles -u 1 src/**/*.mustache build/"
   },
   "dependencies": {
-    "@dorgjelli-test/schema-parse": "0.0.1-prealpha.19",
+    "@dorgjelli-test/schema-parse": "0.0.1-prealpha.20",
     "mustache": "4.0.1"
   },
   "devDependencies": {
