@@ -18,7 +18,6 @@ jobs:
 
       - name: Read VERSION into env.RELEASE_VERSION
         run: echo RELEASE_VERSION=$(cat VERSION) >> $GITHUB_ENV
-        id: version
 
       - uses: actions/github-script@0.8.0
         with:
@@ -28,12 +27,14 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '**Building Release PR (`${{env.RELEASE_VERSION}}`): https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}'
+              body: '**Building Release PR (`${{env.RELEASE_VERSION}}`):** https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}'
             })
 
       - name: Read .nvmrc into env.NVMRC
         run: echo NVMRC=$(cat .nvmrc) >> $GITHUB_ENV
-        id: nvm
+
+      - name: Set env.USER to User
+        run: echo USER=web3-api-build-bot >> $GITHUB_ENV
 
       - name: Setup Node.js
         uses: actions/setup-node@v1
@@ -45,8 +46,8 @@ jobs:
 
       - name: Set Git Identity
         run: |
-          git config --global user.name 'web3-api-build-bot'
-          git config --global user.email 'web3-api-build-bot@users.noreply.github.com'
+          git config --global user.name '${{env.USER}}'
+          git config --global user.email '${{env.USER}}@users.noreply.github.com'
         env:
           GITHUB_TOKEN: ${{ secrets.WEB3_API_BUILD_BOT_PAT }}
 
@@ -58,7 +59,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.WEB3_API_BUILD_BOT_PAT }}
-          push-to-fork: web3-api-build-bot/monorepo
+          push-to-fork: ${{env.USER}}/${{github.repository}}
           branch: "release/${{env.VERSION}}"
           commit-message: "Update v${{env.VERSION}}"
           committer: GitHub <noreply@github.com>
