@@ -13,7 +13,7 @@
     "@as-pect/cli": "5.0.1",
     "assemblyscript": "0.17.14"
   },
-  "gitHead": "02b46fbf4546108f606644d49286f6d93a371eb9",
+  "gitHead": "63f6de7b307ade535beac5dc246d36a308ecc9ef",
   "publishConfig": {
     "access": "public"
   }

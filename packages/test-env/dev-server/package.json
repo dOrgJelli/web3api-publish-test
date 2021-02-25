@@ -28,7 +28,7 @@
     "web3": "1.2.11",
     "web3-utils": "1.2.11"
   },
-  "gitHead": "02b46fbf4546108f606644d49286f6d93a371eb9",
+  "gitHead": "63f6de7b307ade535beac5dc246d36a308ecc9ef",
   "publishConfig": {
     "access": "public"
   }

@@ -7,10 +7,7 @@
       "packages": [
         "./packages/wasm/**/*",
         "./packages/schema/**/*",
-        "./packages/manifest-schema/*",
-        "./packages/js/**/*",
-        "./packages/test-env/*",
-        "./packages/cli/*"
+        "./packages/manifest-schema/*"
       ]
     }
   }
