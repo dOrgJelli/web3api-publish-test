@@ -28,6 +28,9 @@ jobs:
         with:
           node-version: '${{env.NVMRC}}'
 
+      - name: Install dependencies
+        run: yarn install --nonInteractive --frozen-lockfile
+
       - name: Set Git Identity
         run: |
           git config --global user.name 'github-actions[bot]'
