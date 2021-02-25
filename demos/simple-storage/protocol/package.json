@@ -1,20 +1,18 @@
 {
-  "name": "@dorgjelli-test/examples-simple-storage",
-  "version": "0.0.1-prealpha.41",
+  "name": "@dorgjelli-test/example-simple-storage",
+  "private": true,
+  "version": "0.0.1-prealpha.42",
   "license": "MIT",
   "scripts": {
-    "build": "w3 build",
-    "test:env:up": "w3 test-env up && yarn contracts:deploy",
-    "test:env:down": "w3 test-env down"
+    "build": "npx w3 build",
+    "test:env:up": "npx w3 test-env up && yarn contracts:deploy",
+    "test:env:down": "npx w3 test-env down"
   },
   "devDependencies": {
-    "@dorgjelli-test/cli": "0.0.1-prealpha.41",
-    "@dorgjelli-test/ethereum-plugin-js": "0.0.1-prealpha.41",
-    "@dorgjelli-test/wasm-as": "0.0.1-prealpha.41",
+    "@dorgjelli-test/cli": "0.0.1-prealpha.42",
+    "@dorgjelli-test/ethereum-plugin-js": "0.0.1-prealpha.42",
+    "@dorgjelli-test/wasm-as": "0.0.1-prealpha.42",
     "ethers": "5.0.8",
     "js-yaml": "3.14.0"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

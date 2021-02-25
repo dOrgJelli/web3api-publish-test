@@ -1,6 +1,7 @@
 {
   "name": "@dorgjelli-test/templates",
-  "version": "0.0.1-prealpha.41",
+  "private": false,
+  "version": "0.0.1-prealpha.42",
   "description": "Web3API Templates",
   "license": "MIT",
   "gitHead": "02b46fbf4546108f606644d49286f6d93a371eb9",

@@ -84,6 +84,9 @@ jobs:
       - name: Install dependencies
         run: yarn install --nonInteractive --frozen-lockfile
 
+      - name: Build packages
+        run: yarn build
+
       - name: Publish Node Packages To GitHub
         if: ${{env.TAG_EXISTS}} == 'false'
         run: yarn publish:npm
