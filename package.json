@@ -2,6 +2,9 @@
   "name": "root",
   "license": "MIT",
   "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
   "workspaces": {
     "packages": [
       "./packages/**/*",
