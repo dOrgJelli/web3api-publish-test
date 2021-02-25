@@ -5,13 +5,12 @@
   "workspaces": {
     "packages": [
       "./packages/**/*",
-      "./demos/simple-storage/*"
+      "./demos/**/*"
     ],
     "nohoist": [
       "**/@testing-library/*",
       "**/@types/testing-library*",
-      "**/@types/react-lottie",
-      "@web3api/cli"
+      "**/@types/react-lottie"
     ]
   },
   "scripts": {
