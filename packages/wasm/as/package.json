@@ -12,5 +12,6 @@
   "devDependencies": {
     "@as-pect/cli": "5.0.1",
     "assemblyscript": "0.17.14"
-  }
+  },
+  "gitHead": "02b46fbf4546108f606644d49286f6d93a371eb9"
 }

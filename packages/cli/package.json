@@ -10,14 +10,14 @@
     "lint": "eslint --color --ext .ts src/"
   },
   "dependencies": {
-    "@dorgjelli-test/core-js": "0.0.1-prealpha.1",
     "@dorgjelli-test/client-js": "0.0.1-prealpha.1",
     "@dorgjelli-test/client-test-env": "0.0.1-prealpha.1",
-    "@dorgjelli-test/schema-compose": "0.0.1-prealpha.1",
-    "@dorgjelli-test/schema-bind": "0.0.1-prealpha.1",
+    "@dorgjelli-test/core-js": "0.0.1-prealpha.1",
     "@dorgjelli-test/ens-plugin-js": "0.0.1-prealpha.1",
-    "@dorgjelli-test/ipfs-plugin-js": "0.0.1-prealpha.1",
     "@dorgjelli-test/ethereum-plugin-js": "0.0.1-prealpha.1",
+    "@dorgjelli-test/ipfs-plugin-js": "0.0.1-prealpha.1",
+    "@dorgjelli-test/schema-bind": "0.0.1-prealpha.1",
+    "@dorgjelli-test/schema-compose": "0.0.1-prealpha.1",
     "assemblyscript": "0.17.14",
     "axios": "0.19.2",
     "chalk": "4.1.0",
@@ -33,5 +33,6 @@
     "@types/node": "12.6.9",
     "rimraf": "3.0.2",
     "typescript": "3.9.6"
-  }
+  },
+  "gitHead": "02b46fbf4546108f606644d49286f6d93a371eb9"
 }

@@ -15,8 +15,8 @@
     "@dorgjelli-test/manifest-schema": "0.0.1-prealpha.1",
     "graphql": "15.3.0",
     "graphql-tag": "2.10.4",
-    "jsonschema": "1.4.0",
     "js-yaml": "3.14.0",
+    "jsonschema": "1.4.0",
     "semver": "7.3.4"
   },
   "devDependencies": {
@@ -27,5 +27,6 @@
     "ts-jest": "26.1.4",
     "ts-node": "8.10.2",
     "typescript": "3.9.7"
-  }
+  },
+  "gitHead": "02b46fbf4546108f606644d49286f6d93a371eb9"
 }
