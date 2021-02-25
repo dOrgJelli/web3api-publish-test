@@ -16,8 +16,8 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.base.ref }}
 
-      - name: Read VERSION into VERSION
-        run: echo ::set-output name=VERSION::$(cat VERSION)
+      - name: Read VERSION into env.RELEASE_VERSION
+        run: echo RELEASE_VERSION=$(cat VERSION) >> $GITHUB_ENV
         id: version
 
       - uses: actions/github-script@0.8.0
@@ -28,17 +28,17 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: 'Building ${{steps.version.outputs.VERSION}} Release PR...'
+              body: 'Building Release PR For Version `${{env.RELEASE_VERSION}}`...'
             })
 
-      - name: Read .nvmrc into NVMRC
-        run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+      - name: Read .nvmrc into env.NVMRC
+        run: echo NVMRC=$(cat .nvmrc) >> $GITHUB_ENV
         id: nvm
 
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '${{ steps.nvm.outputs.NVMRC }}'
+          node-version: '${{env.NVMRC}}'
 
       - name: Install dependencies
         run: yarn install --nonInteractive --frozen-lockfile
@@ -55,15 +55,15 @@ jobs:
 
       - name: Create Pull Request
         id: cpr
-        uses: peter-evans/create-pull-request@v2
+        uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Update v${{ steps.version.outputs.VERSION }}"
+          commit-message: "Update v${{env.VERSION}}"
           committer: GitHub <noreply@github.com>
-          author: "${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>"
-          title: 'v${{ steps.version.outputs.VERSION }}'
+          author: "${{ github.actor }} <${{github.actor}}@users.noreply.github.com>"
+          title: 'v${{env.VERSION}}'
           body: |
-            ## v${{ steps.version.outputs.VERSION }}
+            ## Web3API ${{env.VERSION}}
 
             ### Breaking Changes
 
@@ -77,7 +77,7 @@ jobs:
 
             - [ ] TODO
           labels: "Web3API-Release"
-          branch: "release/${{ steps.version.outputs.VERSION }}"
+          branch: "release/${{env.VERSION}}"
           request-to-parent: false
 
       - uses: actions/github-script@0.8.0
@@ -88,5 +88,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '**Release PR Created:** https://github.com/${{ github.repository }}/pull/${{ steps.cpr.outputs.pr_number }}'
+              body: '**Release PR Created:** https://github.com/${{ github.repository }}/pull/${{ steps.cpr.outputs.pull-request-number }}'
             })
