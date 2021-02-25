@@ -16,6 +16,21 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.base.ref }}
 
+      - name: Read VERSION into VERSION
+        run: echo ::set-output name=VERSION::$(cat VERSION)
+        id: version
+
+      - uses: actions/github-script@0.8.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Building ${{steps.version.outputs.VERSION} Release PR... https://github.com/${{ github.repository }}/pull/${{ steps.cpr.outputs.pr_number }}'
+            })
+
       - name: Read .nvmrc into NVMRC
         run: echo ::set-output name=NVMRC::$(cat .nvmrc)
         id: nvm
@@ -37,10 +52,6 @@ jobs:
 
       - name: Apply VERSION & Commit
         run: yarn run version:apply --yes
-
-      - name: Read VERSION into VERSION
-        run: echo ::set-output name=VERSION::$(cat VERSION)
-        id: version
 
       - name: Create Pull Request
         id: cpr
