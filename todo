@@ -1,12 +1,3 @@
-[x] when branch prealpha PR merged
-[x]  get the new version from root version file (if version is less than or equal, error)
-[x]  update the package.json files of all packages
-[x]  publish JavaScript Packages
-[x]    lerna publish npmjs.com
-[x]    github tag
-[ ]  publish Web3APIs
-[ ]    Fleek + ENS
-
 TODO:
 x publish specific packages
 - don't publish __test__ folder

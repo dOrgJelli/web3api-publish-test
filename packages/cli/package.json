@@ -2,6 +2,10 @@
   "name": "@dorgjelli-test/cli",
   "version": "0.0.1-prealpha.45",
   "license": "MIT",
+  "files": [
+    "build",
+    "bin"
+  ],
   "bin": {
     "w3": "bin/w3"
   },

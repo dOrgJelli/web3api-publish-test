@@ -3,6 +3,7 @@
   "version": "0.0.1-prealpha.45",
   "license": "MIT",
   "main": "build/index.js",
+  "files": ["build"],
   "scripts": {
     "build": "rimraf ./build && yarn build:manifest && tsc --project tsconfig.build.json",
     "build:manifest": "node ./scripts/generateManifest.js",

@@ -4,6 +4,10 @@
   "version": "0.0.1-prealpha.45",
   "license": "MIT",
   "main": "build/index.js",
+  "files": [
+    "build",
+    "schema.graphql"
+  ],
   "scripts": {
     "build": "rimraf ./build && tsc",
     "lint": "eslint --color --ext .ts src/",
