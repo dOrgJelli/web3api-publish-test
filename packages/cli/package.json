@@ -1,6 +1,6 @@
 {
   "name": "@web3api/cli",
-  "version": "0.0.1-prealpha.9",
+  "version": "0.0.1-prealpha.10",
   "license": "MIT",
   "bin": {
     "w3": "bin/w3"
@@ -10,14 +10,14 @@
     "lint": "eslint --color --ext .ts src/"
   },
   "dependencies": {
-    "@web3api/client-js": "0.0.1-prealpha.9",
-    "@web3api/client-test-env": "0.0.1-prealpha.9",
-    "@web3api/core-js": "0.0.1-prealpha.9",
-    "@web3api/ens-plugin-js": "0.0.1-prealpha.9",
-    "@web3api/ethereum-plugin-js": "0.0.1-prealpha.9",
-    "@web3api/ipfs-plugin-js": "0.0.1-prealpha.9",
-    "@web3api/schema-bind": "0.0.1-prealpha.9",
-    "@web3api/schema-compose": "0.0.1-prealpha.9",
+    "@web3api/client-js": "0.0.1-prealpha.10",
+    "@web3api/client-test-env": "0.0.1-prealpha.10",
+    "@web3api/core-js": "0.0.1-prealpha.10",
+    "@web3api/ens-plugin-js": "0.0.1-prealpha.10",
+    "@web3api/ethereum-plugin-js": "0.0.1-prealpha.10",
+    "@web3api/ipfs-plugin-js": "0.0.1-prealpha.10",
+    "@web3api/schema-bind": "0.0.1-prealpha.10",
+    "@web3api/schema-compose": "0.0.1-prealpha.10",
     "assemblyscript": "0.17.14",
     "axios": "0.19.2",
     "chalk": "4.1.0",

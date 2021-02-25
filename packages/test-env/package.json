@@ -1,6 +1,6 @@
 {
   "name": "@web3api/client-test-env",
-  "version": "0.0.1-prealpha.9",
+  "version": "0.0.1-prealpha.10",
   "license": "MIT",
   "private": true,
   "main": "index.js",
