@@ -33,12 +33,14 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{github.repository}}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check If Tag Exists
         id: tag_check
         shell: bash -ex {0}
         run: |
-          GET_API_URL="https://api.github.com/repos/${{github.repository}}/git/ref/tags/${env.RELEASE_VERSION}"
+          GET_API_URL="https://api.github.com/repos/${{github.repository}}/git/ref/tags/${{env.RELEASE_VERSION}}"
           http_status_code=$(curl -LI $GET_API_URL -o /dev/null -w '%{http_code}\n' -s \
             -H "Authorization: token ${GITHUB_TOKEN}")
           if [ "$http_status_code" -ne "404" ] ; then
