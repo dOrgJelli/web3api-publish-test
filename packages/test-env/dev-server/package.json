@@ -1,6 +1,6 @@
 {
   "name": "@dorgjelli-test/dev-server",
-  "version": "0.0.1-prealpha.1",
+  "version": "0.0.1-prealpha.15",
   "main": "build/index.js",
   "scripts": {
     "start": "node ./build/index.js",
