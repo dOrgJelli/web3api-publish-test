@@ -61,10 +61,8 @@ jobs:
           token: ${{ secrets.WEB3_API_BUILD_BOT_PAT }}
           push-to-fork: ${{env.USER}}/${{github.repository}}
           branch: "release/${{env.RELEASE_VERSION}}"
-          commit-message: "Update v${{env.RELEASE_VERSION}}"
-          committer: GitHub <noreply@github.com>
-          author: "${{ github.actor }} <${{github.actor}}@users.noreply.github.com>"
-          title: 'v${{env.RELEASE_VERSION}}'
+          commit-message: "${{env.RELEASE_VERSION}}"
+          title: 'Web3API ${{env.RELEASE_VERSION}}'
           labels: "Web3API-Release"
           body: |
             ## Web3API ${{env.RELEASE_VERSION}}
