@@ -1,6 +1,6 @@
 {
   "name": "@web3api/wasm-as",
-  "version": "0.0.1-prealpha.13",
+  "version": "0.0.1-prealpha.14",
   "license": "MIT",
   "main": "./assembly/index.ts",
   "scripts": {
