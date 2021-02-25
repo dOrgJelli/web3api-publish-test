@@ -1,9 +1,9 @@
 {
   "name": "templates-app-react",
-  "version": "0.0.1-prealpha.28",
+  "version": "0.0.1-prealpha.29",
   "private": true,
   "dependencies": {
-    "@dorgjelli-test/client-js": "0.0.1-prealpha.28",
+    "@dorgjelli-test/client-js": "0.0.1-prealpha.29",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "@types/node": "^12.0.0",
