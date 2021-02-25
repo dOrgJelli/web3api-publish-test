@@ -7,6 +7,7 @@ jobs:
   Release-PR:
     if: |
       github.event.issue.pull_request &&
+      github.event.issue.pull_request.closed &&
       github.event.comment.author_association == 'OWNER' &&
       startsWith(github.event.comment.body, '/workflows/release-pr')
     runs-on: ubuntu-latest
@@ -28,7 +29,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: 'Building ${{steps.version.outputs.VERSION} Release PR... https://github.com/${{ github.repository }}/pull/${{ steps.cpr.outputs.pr_number }}'
+              body: 'Building ${{steps.version.outputs.VERSION}} Release PR... https://github.com/${{ github.repository }}/pull/${{ steps.cpr.outputs.pr_number }}'
             })
 
       - name: Read .nvmrc into NVMRC
