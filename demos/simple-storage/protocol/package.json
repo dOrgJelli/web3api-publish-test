@@ -2,7 +2,6 @@
   "name": "@dorgjelli-test/examples-simple-storage",
   "version": "0.0.1-prealpha.22",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "build": "w3 build",
     "test:env:up": "w3 test-env up && yarn contracts:deploy",

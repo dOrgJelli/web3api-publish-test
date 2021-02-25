@@ -1,7 +1,6 @@
 {
   "name": "@dorgjelli-test/example-simple-storage-dapp",
   "version": "0.0.1-prealpha.22",
-  "private": true,
   "dependencies": {
     "@dorgjelli-test/client-js": "0.0.1-prealpha.22",
     "react": "^16.13.1",
