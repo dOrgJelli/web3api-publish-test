@@ -1,6 +1,6 @@
 {
   "name": "@dorgjelli-test/client-js",
-  "version": "0.0.1-prealpha.23",
+  "version": "0.0.1-prealpha.24",
   "license": "MIT",
   "main": "build/index.js",
   "bin": {
@@ -16,18 +16,18 @@
     "test:env:down": "w3 test-env down"
   },
   "dependencies": {
-    "@dorgjelli-test/core-js": "0.0.1-prealpha.23",
-    "@dorgjelli-test/ens-plugin-js": "0.0.1-prealpha.23",
-    "@dorgjelli-test/ethereum-plugin-js": "0.0.1-prealpha.23",
-    "@dorgjelli-test/ipfs-plugin-js": "0.0.1-prealpha.23",
-    "@dorgjelli-test/schema-parse": "0.0.1-prealpha.23",
+    "@dorgjelli-test/core-js": "0.0.1-prealpha.24",
+    "@dorgjelli-test/ens-plugin-js": "0.0.1-prealpha.24",
+    "@dorgjelli-test/ethereum-plugin-js": "0.0.1-prealpha.24",
+    "@dorgjelli-test/ipfs-plugin-js": "0.0.1-prealpha.24",
+    "@dorgjelli-test/schema-parse": "0.0.1-prealpha.24",
     "@msgpack/msgpack": "2.3.0",
     "graphql": "^15.4.0",
     "js-yaml": "3.14.0",
     "web-worker": "1.0.0"
   },
   "devDependencies": {
-    "@dorgjelli-test/cli": "0.0.1-prealpha.23",
+    "@dorgjelli-test/cli": "0.0.1-prealpha.24",
     "@types/jest": "26.0.8",
     "@types/js-yaml": "3.11.1",
     "@types/semver": "^7.3.4",
