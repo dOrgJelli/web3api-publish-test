@@ -1,6 +1,6 @@
 {
   "name": "@web3api/client-js",
-  "version": "0.0.1-prealpha.14",
+  "version": "0.0.1-prealpha.15",
   "license": "MIT",
   "main": "build/index.js",
   "bin": {
@@ -17,11 +17,11 @@
   },
   "dependencies": {
     "@msgpack/msgpack": "2.3.0",
-    "@web3api/core-js": "0.0.1-prealpha.14",
-    "@web3api/ens-plugin-js": "0.0.1-prealpha.14",
-    "@web3api/ethereum-plugin-js": "0.0.1-prealpha.14",
-    "@web3api/ipfs-plugin-js": "0.0.1-prealpha.14",
-    "@web3api/schema-parse": "0.0.1-prealpha.14",
+    "@web3api/core-js": "0.0.1-prealpha.15",
+    "@web3api/ens-plugin-js": "0.0.1-prealpha.15",
+    "@web3api/ethereum-plugin-js": "0.0.1-prealpha.15",
+    "@web3api/ipfs-plugin-js": "0.0.1-prealpha.15",
+    "@web3api/schema-parse": "0.0.1-prealpha.15",
     "graphql": "^15.4.0",
     "js-yaml": "3.14.0",
     "web-worker": "1.0.0"
@@ -30,7 +30,7 @@
     "@types/jest": "26.0.8",
     "@types/js-yaml": "3.11.1",
     "@types/semver": "^7.3.4",
-    "@web3api/cli": "0.0.1-prealpha.14",
+    "@web3api/cli": "0.0.1-prealpha.15",
     "axios": "0.19.2",
     "jest": "26.2.2",
     "rimraf": "3.0.2",
