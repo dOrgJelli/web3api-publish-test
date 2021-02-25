@@ -1,6 +1,6 @@
 {
   "name": "@dorgjelli-test/client-test-env",
-  "version": "0.0.1-prealpha.42",
+  "version": "0.0.1-prealpha.43",
   "license": "MIT",
   "main": "index.js",
   "types": "index.d.ts",
