@@ -1,9 +1,9 @@
 {
   "name": "@web3api/example-simple-storage-dapp",
-  "version": "0.0.1-prealpha.10",
+  "version": "0.0.1-prealpha.11",
   "private": true,
   "dependencies": {
-    "@web3api/client-js": "0.0.1-prealpha.10",
+    "@web3api/client-js": "0.0.1-prealpha.11",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-lottie": "1.2.3",
