@@ -51,7 +51,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.WEB3_API_BUILD_BOT_PAT }}
 
-      - name: Apply VERSION & Commit
+      - name: Apply Version & Commit
         run: yarn run version:apply --yes
 
       - name: Create Pull Request
@@ -60,14 +60,14 @@ jobs:
         with:
           token: ${{ secrets.WEB3_API_BUILD_BOT_PAT }}
           push-to-fork: ${{env.USER}}/${{github.repository}}
-          branch: "release/${{env.VERSION}}"
-          commit-message: "Update v${{env.VERSION}}"
+          branch: "release/${{env.RELEASE_VERSION}}"
+          commit-message: "Update v${{env.RELEASE_VERSION}}"
           committer: GitHub <noreply@github.com>
           author: "${{ github.actor }} <${{github.actor}}@users.noreply.github.com>"
-          title: 'v${{env.VERSION}}'
+          title: 'v${{env.RELEASE_VERSION}}'
           labels: "Web3API-Release"
           body: |
-            ## Web3API ${{env.VERSION}}
+            ## Web3API ${{env.RELEASE_VERSION}}
 
             ### Breaking Changes
 
