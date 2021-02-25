@@ -1,7 +1,7 @@
 {
   "name": "@web3api/http-plugin-js",
   "description": "HTTP plugin enabling invocating http methods through web3api",
-  "version": "0.0.1-prealpha.13",
+  "version": "0.0.1-prealpha.14",
   "license": "MIT",
   "main": "build/index.js",
   "scripts": {
@@ -12,12 +12,12 @@
     "test:watch": "jest --watch --passWithNoTests --verbose"
   },
   "dependencies": {
-    "@web3api/core-js": "0.0.1-prealpha.13",
+    "@web3api/core-js": "0.0.1-prealpha.14",
     "axios": "0.21.1"
   },
   "devDependencies": {
     "@types/jest": "26.0.8",
-    "@web3api/client-js": "0.0.1-prealpha.13",
+    "@web3api/client-js": "0.0.1-prealpha.14",
     "jest": "26.2.2",
     "nock": "13.0.7",
     "rimraf": "3.0.2",
