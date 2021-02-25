@@ -1,6 +1,6 @@
 {
   "name": "@dorgjelli-test/ethereum-plugin-js",
-  "version": "0.0.1-prealpha.25",
+  "version": "0.0.1-prealpha.26",
   "license": "MIT",
   "main": "build/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "test:watch": "jest --watch --passWithNoTests --verbose"
   },
   "dependencies": {
-    "@dorgjelli-test/core-js": "0.0.1-prealpha.25",
+    "@dorgjelli-test/core-js": "0.0.1-prealpha.26",
     "ethers": "5.0.7"
   },
   "devDependencies": {
