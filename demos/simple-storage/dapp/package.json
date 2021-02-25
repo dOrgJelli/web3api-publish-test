@@ -1,8 +1,8 @@
 {
   "name": "@dorgjelli-test/example-simple-storage-dapp",
-  "version": "0.0.1-prealpha.41",
+  "version": "0.0.1-prealpha.42",
   "dependencies": {
-    "@dorgjelli-test/client-js": "0.0.1-prealpha.41",
+    "@dorgjelli-test/client-js": "0.0.1-prealpha.42",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-lottie": "1.2.3",
