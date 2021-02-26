@@ -19,6 +19,14 @@ jobs:
       - name: Read VERSION into env.RELEASE_VERSION
         run: echo RELEASE_VERSION=$(cat VERSION) >> $GITHUB_ENV
 
+      - name: Make sure it's the publisher
+        run: |
+          if [grep -Fxq ${{github.event.comment.user.login}} .github/PUBLISHERS]; then
+            echo IS_PUBLISHER=true >> $GITHUB_ENV
+          else
+            echo IS_PUBLISHER=false >> $GITHUB_ENV
+          fi
+
       - name: Check If Tag Exists
         id: tag_check
         shell: bash -ex {0}
@@ -43,13 +51,13 @@ jobs:
         run: echo USER=web3-api-build-bot >> $GITHUB_ENV
 
       - name: Setup Node.js
-        if: ${{env.TAG_EXISTS}} == 'false'
+        if: ${{env.TAG_EXISTS}} == false
         uses: actions/setup-node@v1
         with:
           node-version: '${{env.NVMRC}}'
 
       - name: Set Git Identity
-        if: ${{env.TAG_EXISTS}} == 'false'
+        if: ${{env.TAG_EXISTS}} == false
         run: |
           git config --global user.name '${{env.USER}}'
           git config --global user.email '${{env.USER}}@users.noreply.github.com'
@@ -57,11 +65,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.WEB3_API_BUILD_BOT_PAT }}
 
       - name: Apply Version & Commit
-        if: ${{env.TAG_EXISTS}} == 'false'
+        if: ${{env.TAG_EXISTS}} == false
         run: yarn run version:apply --yes
 
       - name: Create Pull Request
-        if: ${{env.TAG_EXISTS}} == 'false'
+        if: ${{env.TAG_EXISTS}} == false
         id: cpr
         uses: peter-evans/create-pull-request@v3
         with:
