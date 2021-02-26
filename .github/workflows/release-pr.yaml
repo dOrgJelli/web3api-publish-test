@@ -19,13 +19,9 @@ jobs:
       - name: Commenter Is Publisher?
         run: |
           exists=$(echo $(grep -Fxcs ${COMMENTER} .github/PUBLISHERS))
-          echo here
-          echo "$exists"
           if [ "$exists" == "1" ] ; then
-            echo in here
             echo IS_PUBLISHER=true >> $GITHUB_ENV
           else
-            echo oh no
             echo IS_PUBLISHER=false >> $GITHUB_ENV
           fi
         env:
