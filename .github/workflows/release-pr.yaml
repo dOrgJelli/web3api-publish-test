@@ -4,20 +4,16 @@ on:
     types: [created]
 
 jobs:
-  Set-Bot:
+  Pre-Check:
     if: |
       github.event.issue.pull_request &&
-      startsWith(github.event.comment.body, '/workflows/release-pr')
+      startsWith(github.event.comment.body, '/workflows/release-pr') &&
+      github.event.comment.user.login != web3-api-build-bot
     runs-on: ubuntu-18.04
     steps:
-      - name: Set env.BOT to Build Bot Username
+      - name: Set env.BOT to Build Bot's Username
         run: echo BOT=web3-api-build-bot >> $GITHUB_ENV
 
-  Pre-Check:
-    needs: Set-Bot
-    if: github.event.comment.user.login != env.BOT
-    runs-on: ubuntu-18.04
-    steps:
       - name: Commenter Is Publisher?
         run: |
           exists=$(grep -Fxc ${{github.event.comment.user.login}} .github/PUBLISHERS)
@@ -63,11 +59,14 @@ jobs:
               body: '[Release Already Exists](https://api.github.com/repos/${{github.repository}}/git/ref/tags/${{env.RELEASE_VERSION}}) (`${{env.RELEASE_VERSION}}`)'
             })
 
+      - name: Fail If Conditions Aren't Met...
+        if: |
+          env.IS_PUBLISHER == 'true' &&
+          env.TAG_EXISTS == 'false'
+        run: exit 1
+
   Release-PR:
     needs: Pre-Check
-    if: |
-      env.IS_PUBLISHER == 'true' &&
-      env.TAG_EXISTS == 'false'
     runs-on: ubuntu-18.04
     steps:
       - name: Building Release PR...
