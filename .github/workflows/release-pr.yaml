@@ -4,21 +4,20 @@ on:
     types: [created]
 
 jobs:
-  Release-PR:
+  Set-Bot:
     if: |
       github.event.issue.pull_request &&
-      startsWith(github.event.comment.body, '/workflows/release-pr')
+      startsWith(github.event.comment.body, '/workflows/release-pr') &&
+    steps:
+      - name: Set env.BOT to Build Bot Username
+        run: echo BOT=web3-api-build-bot >> $GITHUB_ENV
+
+  Pre-Check:
+    needs: Set-Bot
+    if: github.event.comment.user.login != env.BOT
     runs-on: ubuntu-18.04
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.base.ref }}
-
-      - name: Read VERSION into env.RELEASE_VERSION
-        run: echo RELEASE_VERSION=$(cat VERSION) >> $GITHUB_ENV
-
-      - name: Make sure it's the publisher
+      - name: Commenter Is Publisher?
         run: |
           exists=$(grep -Fxc ${{github.event.comment.user.login}} .github/PUBLISHERS)
           if [ "$exists" -eq "1" ] ; then
@@ -27,7 +26,15 @@ jobs:
             echo IS_PUBLISHER=false >> $GITHUB_ENV
           fi
 
-      - name: Check If Tag Exists
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.base.ref }}
+
+      - name: Read VERSION into env.RELEASE_VERSION
+        run: echo RELEASE_VERSION=$(cat VERSION) >> $GITHUB_ENV
+
+      - name: Tag Exists?
         id: tag_check
         shell: bash -ex {0}
         run: |
@@ -42,43 +49,66 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Release Already Exists...
+        if: ${{env.TAG_EXISTS == 'true'}}
+        uses: actions/github-script@0.8.0
+        with:
+          github-token: ${{secrets.WEB3_API_BUILD_BOT_PAT}}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '[Release Already Exists](https://api.github.com/repos/${{github.repository}}/git/ref/tags/${{env.RELEASE_VERSION}}) (`${{env.RELEASE_VERSION}}`)'
+            })
 
+  Release-PR:
+    needs: Pre-Check
+    if: |
+      env.IS_PUBLISHER == 'true' &&
+      env.TAG_EXISTS == 'false'
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Building Release PR...
+        uses: actions/github-script@0.8.0
+        with:
+          github-token: ${{secrets.WEB3_API_BUILD_BOT_PAT}}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '[Building Release PR](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}) (`${{env.RELEASE_VERSION}}`)'
+            })
 
       - name: Read .nvmrc into env.NVMRC
         run: echo NVMRC=$(cat .nvmrc) >> $GITHUB_ENV
 
-      - name: Set env.USER to User
-        run: echo USER=web3-api-build-bot >> $GITHUB_ENV
-
       - name: Setup Node.js
-        if: ${{env.TAG_EXISTS == 'false'}}
         uses: actions/setup-node@v1
         with:
           node-version: '${{env.NVMRC}}'
 
       - name: Set Git Identity
-        if: ${{env.TAG_EXISTS == 'false'}}
         run: |
-          git config --global user.name '${{env.USER}}'
-          git config --global user.email '${{env.USER}}@users.noreply.github.com'
+          git config --global user.name '${{env.BOT}}'
+          git config --global user.email '${{env.BOT}}@users.noreply.github.com'
         env:
           GITHUB_TOKEN: ${{ secrets.WEB3_API_BUILD_BOT_PAT }}
 
       - name: Apply Version & Commit
-        if: ${{env.TAG_EXISTS == 'false'}}
         run: yarn run version:apply --yes
 
       - name: Create Pull Request
-        if: ${{env.TAG_EXISTS == 'false'}}
         id: cpr
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.WEB3_API_BUILD_BOT_PAT }}
-          push-to-fork: ${{env.USER}}/${{github.event.repository.name}}
+          push-to-fork: ${{env.BOT}}/${{github.event.repository.name}}
           branch: release/${{env.RELEASE_VERSION}}
           base: ${{ github.event.pull_request.base.ref }}
           committer: GitHub <noreply@github.com>
-          author: ${{env.USER}} <${{env.USER}}@users.noreply.github.com>
+          author: ${{env.BOT}} <${{env.BOT}}@users.noreply.github.com>
           commit-message: "${{env.RELEASE_VERSION}}"
           title: 'Web3API ${{env.RELEASE_VERSION}}'
           body: |
@@ -98,4 +128,14 @@ jobs:
 
             - [ ] TODO
 
-      
+      - name: Release PR Created...
+        uses: actions/github-script@0.8.0
+        with:
+          github-token: ${{secrets.WEB3_API_BUILD_BOT_PAT}}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '**[Release PR Created](https://github.com/${{github.repository}}/pull/${{ steps.cpr.outputs.pull-request-number }}) (`${{env.RELEASE_VERSION}}`)**'
+            })
