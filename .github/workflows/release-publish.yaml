@@ -76,15 +76,18 @@ jobs:
           prerelease: false
 
       - name: Auth into NPM
+        if: ${{env.TAG_EXISTS}} == 'false'
         run: |
           npm config set registry https://registry.npmjs.org/
           npm config set //registry.npmjs.org/:_authToken=${{secrets.WEB3_API_BUILD_BOT_NPM_PAT}}
           echo $(npm whoami --registry https://registry.npmjs.org/)
 
       - name: Install dependencies
+        if: ${{env.TAG_EXISTS}} == 'false'
         run: yarn install --nonInteractive --frozen-lockfile
 
       - name: Build packages
+        if: ${{env.TAG_EXISTS}} == 'false'
         run: yarn build
 
       - name: Publish Node Packages To NPM
@@ -94,6 +97,7 @@ jobs:
           NPM_AUTH_TOKEN: ${{secrets.WEB3_API_BUILD_BOT_NPM_PAT}}
 
       - uses: actions/github-script@0.8.0
+        if: ${{env.TAG_EXISTS}} == 'false'
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |

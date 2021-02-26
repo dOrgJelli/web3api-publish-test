@@ -1,7 +1,12 @@
 {
   "name": "@dorgjelli-test/cli",
+  "description": "Web3API CLI",
   "version": "0.0.1-prealpha.46",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/web3-api/monorepo.git"
+  },
   "files": [
     "build",
     "bin"

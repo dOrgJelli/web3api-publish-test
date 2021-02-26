@@ -7,7 +7,7 @@ jobs:
   Release-PR:
     if: |
       github.event.issue.pull_request &&
-      github.event.comment.author_association == 'OWNER' &&
+      grep -Fxq ${{github.event.comment.user.login}} .github/PUBLISHERS &&
       startsWith(github.event.comment.body, '/workflows/release-pr')
     runs-on: ubuntu-18.04
     steps:
@@ -19,7 +19,24 @@ jobs:
       - name: Read VERSION into env.RELEASE_VERSION
         run: echo RELEASE_VERSION=$(cat VERSION) >> $GITHUB_ENV
 
-      - uses: actions/github-script@0.8.0
+      - name: Check If Tag Exists
+        id: tag_check
+        shell: bash -ex {0}
+        run: |
+          GET_API_URL="https://api.github.com/repos/${{github.repository}}/git/ref/tags/${{env.RELEASE_VERSION}}"
+          http_status_code=$(curl -LI $GET_API_URL -o /dev/null -w '%{http_code}\n' -s \
+            -H "Authorization: token ${GITHUB_TOKEN}")
+          if [ "$http_status_code" -ne "404" ] ; then
+            echo TAG_EXISTS=true >> $GITHUB_ENV
+          else
+            echo TAG_EXISTS=false >> $GITHUB_ENV
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Building Release PR...
+        if: ${{env.TAG_EXISTS}} == 'false'
+        uses: actions/github-script@0.8.0
         with:
           github-token: ${{secrets.WEB3_API_BUILD_BOT_PAT}}
           script: |
@@ -30,6 +47,19 @@ jobs:
               body: '[Building Release PR](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}) (`${{env.RELEASE_VERSION}}`)'
             })
 
+      - name: Release Already Exists...
+        if: ${{env.TAG_EXISTS}} == 'true'
+        uses: actions/github-script@0.8.0
+        with:
+          github-token: ${{secrets.WEB3_API_BUILD_BOT_PAT}}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '[Release Already Exists](https://api.github.com/repos/${{github.repository}}/git/ref/tags/${{env.RELEASE_VERSION}}) (`${{env.RELEASE_VERSION}}`)'
+            })
+
       - name: Read .nvmrc into env.NVMRC
         run: echo NVMRC=$(cat .nvmrc) >> $GITHUB_ENV
 
@@ -37,11 +67,13 @@ jobs:
         run: echo USER=web3-api-build-bot >> $GITHUB_ENV
 
       - name: Setup Node.js
+        if: ${{env.TAG_EXISTS}} == 'false'
         uses: actions/setup-node@v1
         with:
           node-version: '${{env.NVMRC}}'
 
       - name: Set Git Identity
+        if: ${{env.TAG_EXISTS}} == 'false'
         run: |
           git config --global user.name '${{env.USER}}'
           git config --global user.email '${{env.USER}}@users.noreply.github.com'
@@ -49,9 +81,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.WEB3_API_BUILD_BOT_PAT }}
 
       - name: Apply Version & Commit
+        if: ${{env.TAG_EXISTS}} == 'false'
         run: yarn run version:apply --yes
 
       - name: Create Pull Request
+        if: ${{env.TAG_EXISTS}} == 'false'
         id: cpr
         uses: peter-evans/create-pull-request@v3
         with:
@@ -80,7 +114,9 @@ jobs:
 
             - [ ] TODO
 
-      - uses: actions/github-script@0.8.0
+      - name: Release PR Created...
+        if: ${{env.TAG_EXISTS}} == 'false'
+        uses: actions/github-script@0.8.0
         with:
           github-token: ${{secrets.WEB3_API_BUILD_BOT_PAT}}
           script: |

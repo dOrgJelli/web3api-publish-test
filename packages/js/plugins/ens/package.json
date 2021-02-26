@@ -1,7 +1,12 @@
 {
   "name": "@dorgjelli-test/ens-plugin-js",
+  "description": "Web3API ENS Javascript Plugin",
   "version": "0.0.1-prealpha.46",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/web3-api/monorepo.git"
+  },
   "main": "build/index.js",
   "files": [
     "build",

@@ -1,8 +1,8 @@
 TODO:
-- release PR -> detect if release has already been made, don't create PR if it already exists
-- release PR -> see if commenter is apart of the PUBLISHERS file
+x release PR -> detect if release has already been made, don't create PR if it already exists
+x release PR -> see if commenter is apart of the PUBLISHERS file
 x publish specific packages
-- don't publish __test__ folder
+x don't publish __test__ folder
 x make sure all published packages are required packages
 - change name back to @web3api and migrate this setup to the main repo
 - squash commit history
