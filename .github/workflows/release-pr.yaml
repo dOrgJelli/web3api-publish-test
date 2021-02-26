@@ -14,6 +14,11 @@ jobs:
       - name: Set env.BOT to Build Bot's Username
         run: echo BOT=web3-api-build-bot >> $GITHUB_ENV
 
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.base.ref }}
+
       - name: Commenter Is Publisher?
         run: |
           exists=$(grep -Fxc ${{github.event.comment.user.login}} .github/PUBLISHERS)
@@ -22,11 +27,6 @@ jobs:
           else
             echo IS_PUBLISHER=false >> $GITHUB_ENV
           fi
-
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.base.ref }}
 
       - name: Read VERSION into env.RELEASE_VERSION
         run: echo RELEASE_VERSION=$(cat VERSION) >> $GITHUB_ENV
