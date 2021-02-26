@@ -7,7 +7,7 @@ jobs:
   Set-Bot:
     if: |
       github.event.issue.pull_request &&
-      startsWith(github.event.comment.body, '/workflows/release-pr') &&
+      startsWith(github.event.comment.body, '/workflows/release-pr')
     runs-on: ubuntu-18.04
     steps:
       - name: Set env.BOT to Build Bot Username
