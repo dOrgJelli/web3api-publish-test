@@ -1,7 +1,7 @@
 {
   "name": "@dorgjelli-test/ethereum-plugin-js",
   "description": "Web3API Ethereum Javascript Plugin",
-  "version": "0.0.1-prealpha.48",
+  "version": "0.0.1-prealpha.49",
   "license": "MIT",
   "repository": {
     "type": "git",
