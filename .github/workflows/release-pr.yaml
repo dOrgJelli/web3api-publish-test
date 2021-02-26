@@ -20,7 +20,8 @@ jobs:
 
       - name: Make sure it's the publisher
         run: |
-          if grep -Fxq ${{github.event.comment.user.login}} .github/PUBLISHERS; then
+          exists=$(grep -Fx ${{github.event.comment.user.login}} .github/PUBLISHERS)
+          if [ "$exists" -eq "${{github.event.comment.user.login}}" ] ; then
             echo IS_PUBLISHER=true >> $GITHUB_ENV
           else
             echo IS_PUBLISHER=false >> $GITHUB_ENV
