@@ -22,7 +22,7 @@ jobs:
           echo $(grep -Fxcs dOrgJell .github/PUBLISHERS)
           echo $(grep -Fxcs dOrgJelli .github/PUBLISHERS)
           echo $(grep -Fxcs '${COMMENTER}' .github/PUBLISHERS)
-          exists=$(grep -Fxcs '${COMMENTER}' .github/PUBLISHERS)
+          exists="$(echo $(grep -Fxcs '${COMMENTER}' .github/PUBLISHERS))"
           echo after
           if [ "$exists" == "1" ] ; then
             echo IS_PUBLISHER=true >> $GITHUB_ENV
