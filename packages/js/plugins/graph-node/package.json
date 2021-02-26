@@ -1,7 +1,7 @@
 {
   "name": "@dorgjelli-test/graph-node-plugin-js",
   "description": "Web3API Graph Node Javascript Plugin",
-  "version": "0.0.1-prealpha.46",
+  "version": "0.0.1-prealpha.48",
   "license": "MIT",
   "repository": {
     "type": "git",
