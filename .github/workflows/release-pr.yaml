@@ -8,6 +8,7 @@ jobs:
     if: |
       github.event.issue.pull_request &&
       startsWith(github.event.comment.body, '/workflows/release-pr') &&
+    runs-on: ubuntu-18.04
     steps:
       - name: Set env.BOT to Build Bot Username
         run: echo BOT=web3-api-build-bot >> $GITHUB_ENV
