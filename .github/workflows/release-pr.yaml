@@ -87,6 +87,9 @@ jobs:
       - name: Set env.BOT to Build Bot's Username
         run: echo BOT=web3-api-build-bot >> $GITHUB_ENV
 
+      - name: Read VERSION into env.RELEASE_VERSION
+        run: echo RELEASE_VERSION=$(cat VERSION) >> $GITHUB_ENV
+
       - name: Building Release PR...
         uses: actions/github-script@0.8.0
         with:
