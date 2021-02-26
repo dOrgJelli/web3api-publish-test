@@ -2,7 +2,7 @@
   "name": "@dorgjelli-test/demo-simple-storage-dapp",
   "description": "Web3API SimpleStorage dApp Demo",
   "private": true,
-  "version": "0.0.1-prealpha.46",
+  "version": "0.0.1-prealpha.48",
   "license": "MIT",
   "repository": {
     "type": "git",
