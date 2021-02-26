@@ -18,12 +18,17 @@ jobs:
 
       - name: Commenter Is Publisher?
         run: |
-          exists=$(grep -Fxcs ${COMMENTER} .github/PUBLISHERS)
+          echo ${COMMENTER}
+          exists=$(grep -Fxcs '${COMMENTER}' .github/PUBLISHERS)
+          echo after
           if [ "$exists" == "1" ] ; then
             echo IS_PUBLISHER=true >> $GITHUB_ENV
           else
+            echo hererererere
             echo IS_PUBLISHER=false >> $GITHUB_ENV
+            echo heeeee
           fi
+          echo hey
         env:
           COMMENTER: ${{github.event.comment.user.login}}
 
