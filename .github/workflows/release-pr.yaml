@@ -28,6 +28,19 @@ jobs:
             echo IS_PUBLISHER=false >> $GITHUB_ENV
           fi
 
+      - name: Commenter Is Not Publisher...
+        if: ${{env.IS_PUBLISHER == 'false'}}
+        uses: actions/github-script@0.8.0
+        with:
+          github-token: ${{secrets.WEB3_API_BUILD_BOT_PAT}}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '${{github.event.comment.user.login}} is not a PUBLISHER. Please see the .github/PUBLISHERS file...'
+            })
+
       - name: Read VERSION into env.RELEASE_VERSION
         run: echo RELEASE_VERSION=$(cat VERSION) >> $GITHUB_ENV
 
@@ -61,8 +74,8 @@ jobs:
 
       - name: Fail If Conditions Aren't Met...
         if: |
-          env.IS_PUBLISHER == 'true' &&
-          env.TAG_EXISTS == 'false'
+          env.IS_PUBLISHER != 'true' ||
+          env.TAG_EXISTS != 'false'
         run: exit 1
 
   Release-PR:
