@@ -6,7 +6,7 @@ import {
   Plugin,
   PluginManifest,
   PluginModules,
-} from "@dorgjelli-test/core-js";
+} from "@web3api/core-js";
 import CID from "cids";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-require-imports

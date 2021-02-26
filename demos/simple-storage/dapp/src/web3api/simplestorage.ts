@@ -1,4 +1,4 @@
-import { Uri, Web3ApiClient } from "@dorgjelli-test/client-js";
+import { Uri, Web3ApiClient } from "@web3api/client-js";
 
 export const uri = new Uri("ens/api.simplestorage.eth");
 

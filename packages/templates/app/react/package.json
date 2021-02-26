@@ -4,7 +4,7 @@
   "private": true,
   "version": "0.0.1-prealpha.49",
   "dependencies": {
-    "@dorgjelli-test/client-js": "0.0.1-prealpha.47",
+    "@web3api/client-js": "0.0.1-prealpha.47",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "@types/node": "^12.0.0",

@@ -1,5 +1,5 @@
 {
-  "name": "@dorgjelli-test/dev-server",
+  "name": "@web3api/dev-server",
   "version": "0.0.1-prealpha.49",
   "private": true,
   "main": "build/index.js",

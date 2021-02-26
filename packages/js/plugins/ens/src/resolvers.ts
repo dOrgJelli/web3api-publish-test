@@ -1,6 +1,6 @@
 import { EnsPlugin } from "./";
 
-import { Client, PluginModule } from "@dorgjelli-test/core-js";
+import { Client, PluginModule } from "@web3api/core-js";
 
 export const query = (ens: EnsPlugin, client: Client): PluginModule => ({
   // w3/api-resolver

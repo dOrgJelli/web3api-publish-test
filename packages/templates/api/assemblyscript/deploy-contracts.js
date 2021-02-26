@@ -1,4 +1,4 @@
-const { EthereumPlugin } = require("@dorgjelli-test/ethereum-plugin-js");
+const { EthereumPlugin } = require("@web3api/ethereum-plugin-js");
 const fs = require("fs");
 const YAML = require("js-yaml");
 

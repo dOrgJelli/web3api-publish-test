@@ -9,7 +9,7 @@ import {
   addFirstLast,
   toGraphQLType,
   performTransforms,
-} from "@dorgjelli-test/schema-parse";
+} from "@web3api/schema-parse";
 
 // Remove mustache's built-in HTML escaping
 Mustache.escape = (value) => value;

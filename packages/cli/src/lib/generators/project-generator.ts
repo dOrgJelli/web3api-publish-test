@@ -91,7 +91,7 @@ export const generateProject = (
     const isOnline = checkIfOnline(useYarn);
 
     const root = path.resolve(projectName);
-    const dependencies: string[] = ["@dorgjelli-test/templates"];
+    const dependencies: string[] = ["@web3api/templates"];
 
     if (useYarn) {
       command = "yarnpkg";
@@ -130,14 +130,14 @@ export const generateProject = (
     executeCommand(command, args, root)
       .then(() => {
         copyAsync(
-          `${root}/node_modules/@dorgjelli-test/templates/${type}/${lang}`,
+          `${root}/node_modules/@web3api/templates/${type}/${lang}`,
           `${root}`,
           {
             overwrite: true,
           }
         )
           .then(() => {
-            // Now need to remove `@dorgjelli-test/templates` from packages
+            // Now need to remove `@web3api/templates` from packages
             if (useYarn) {
               command = "yarnpkg";
               args = ["remove"].concat(dependencies);
@@ -156,7 +156,7 @@ export const generateProject = (
           })
           .catch(() => {
             reject({
-              command: `copy ${root}/node_modules/@dorgjelli-test/templates/${type}/${lang} ${root}`,
+              command: `copy ${root}/node_modules/@web3api/templates/${type}/${lang} ${root}`,
             });
           });
       })

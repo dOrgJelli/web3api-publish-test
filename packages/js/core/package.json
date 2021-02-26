@@ -1,5 +1,5 @@
 {
-  "name": "@dorgjelli-test/core-js",
+  "name": "@web3api/core-js",
   "description": "Web3API Javascript Core",
   "version": "0.0.1-prealpha.49",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "test:watch": "jest --watch --passWithNoTests --verbose"
   },
   "dependencies": {
-    "@dorgjelli-test/manifest-schema": "0.0.1-prealpha.47",
+    "@web3api/manifest-schema": "0.0.1-prealpha.47",
     "graphql": "15.3.0",
     "graphql-tag": "2.10.4",
     "js-yaml": "3.14.0",

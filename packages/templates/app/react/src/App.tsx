@@ -2,12 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { Uri, UriRedirect, Web3ApiClient } from "@dorgjelli-test/client-js";
-import { EnsPlugin } from "@dorgjelli-test/ens-plugin-js";
-import { EthereumPlugin } from "@dorgjelli-test/ethereum-plugin-js";
-import { IpfsPlugin } from "@dorgjelli-test/ipfs-plugin-js";
+import { Uri, UriRedirect, Web3ApiClient } from "@web3api/client-js";
+import { EnsPlugin } from "@web3api/ens-plugin-js";
+import { EthereumPlugin } from "@web3api/ethereum-plugin-js";
+import { IpfsPlugin } from "@web3api/ipfs-plugin-js";
 
-// Needed for bundling the @dorgjelli-test/client-js web worker
+// Needed for bundling the @web3api/client-js web worker
 process.env.WORKER_PREFIX= 'workerize-loader!';
 
 function App() {

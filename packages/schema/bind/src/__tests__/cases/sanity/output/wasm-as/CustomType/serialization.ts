@@ -5,7 +5,7 @@ import {
   WriteSizer,
   WriteEncoder,
   Nullable
-} from "@dorgjelli-test/wasm-as";
+} from "@web3api/wasm-as";
 import { CustomType } from "./";
 import * as Objects from "..";
 

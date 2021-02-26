@@ -17,7 +17,7 @@ import {
   InvokeApiOptions,
   InvokeApiResult,
   Manifest,
-} from "@dorgjelli-test/core-js";
+} from "@web3api/core-js";
 
 export interface ClientConfig {
   redirects: UriRedirect[];

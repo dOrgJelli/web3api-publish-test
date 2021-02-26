@@ -5,7 +5,7 @@ import {
   WriteSizer,
   WriteEncoder,
   Nullable
-} from "@dorgjelli-test/wasm-as";
+} from "@web3api/wasm-as";
 import { TestImport_AnotherObject } from "./";
 import * as Objects from "../..";
 

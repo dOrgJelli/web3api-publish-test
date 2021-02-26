@@ -19,8 +19,8 @@
     ]
   },
   "scripts": {
-    "build": "lerna run build --no-private --ignore @dorgjelli-test/cli && yarn build:cli",
-    "build:cli": "lerna run build --scope @dorgjelli-test/cli",
+    "build": "lerna run build --no-private --ignore @web3api/cli && yarn build:cli",
+    "build:cli": "lerna run build --scope @web3api/cli",
     "lint": "lerna run lint",
     "lint:fix": "lerna run lint -- --fix",
     "lint:ci": "lerna run lint --parallel",

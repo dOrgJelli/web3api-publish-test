@@ -7,7 +7,7 @@ import {
   extendType,
   addFirstLast,
   toGraphQLType,
-} from "@dorgjelli-test/schema-parse";
+} from "@web3api/schema-parse";
 import path from "path";
 import Mustache from "mustache";
 

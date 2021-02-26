@@ -4,7 +4,7 @@ import {
   WriteSizer,
   WriteEncoder,
   ReadDecoder
-} from "@dorgjelli-test/wasm-as";
+} from "@web3api/wasm-as";
 import * as Objects from "../..";
 
 export class Input_importedMethod {

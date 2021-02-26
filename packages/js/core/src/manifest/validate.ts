@@ -1,8 +1,8 @@
 import { AnyManifest, ManifestFormats } from "./";
 
 // TODO: Uncomment when a new version exists
-// import schema_0_0_1_alpha_2 from "@dorgjelli-test/manifest-schema/formats/0.0.1-prealpha.2.json";
-import schema_0_0_1_prealpha_1 from "@dorgjelli-test/manifest-schema/formats/0.0.1-prealpha.1.json";
+// import schema_0_0_1_alpha_2 from "@web3api/manifest-schema/formats/0.0.1-prealpha.2.json";
+import schema_0_0_1_prealpha_1 from "@web3api/manifest-schema/formats/0.0.1-prealpha.1.json";
 import { Validator, Schema } from "jsonschema";
 
 enum ValidationError {

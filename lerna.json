@@ -5,7 +5,7 @@
   "command": {
     "publish": {
       "ignore": [
-        "@dorgjelli-test/demo-*",
+        "@web3api/demo-*",
         "templates-*"
       ]
     }

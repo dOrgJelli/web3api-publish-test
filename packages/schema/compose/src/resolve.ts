@@ -27,7 +27,7 @@ import {
   populatePropertyType,
   visitImportedQueryDefinition,
   visitImportedObjectDefinition,
-} from "@dorgjelli-test/schema-parse";
+} from "@web3api/schema-parse";
 import Mustache from "mustache";
 
 // Remove mustache's built-in HTML escaping

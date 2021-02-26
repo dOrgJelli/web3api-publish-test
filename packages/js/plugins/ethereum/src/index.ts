@@ -7,7 +7,7 @@ import {
   Plugin,
   PluginManifest,
   PluginModules,
-} from "@dorgjelli-test/core-js";
+} from "@web3api/core-js";
 import { Signer, ethers } from "ethers";
 import {
   ExternalProvider,

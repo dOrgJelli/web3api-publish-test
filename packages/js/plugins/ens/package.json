@@ -1,5 +1,5 @@
 {
-  "name": "@dorgjelli-test/ens-plugin-js",
+  "name": "@web3api/ens-plugin-js",
   "description": "Web3API ENS Javascript Plugin",
   "version": "0.0.1-prealpha.49",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "test:watch": "jest --watch --passWithNoTests --verbose"
   },
   "dependencies": {
-    "@dorgjelli-test/core-js": "0.0.1-prealpha.47",
+    "@web3api/core-js": "0.0.1-prealpha.47",
     "ethers": "5.0.7"
   },
   "devDependencies": {

@@ -9,9 +9,9 @@
     "test:env:down": "npx w3 test-env down"
   },
   "devDependencies": {
-    "@dorgjelli-test/cli": "0.0.1-prealpha.47",
-    "@dorgjelli-test/ethereum-plugin-js": "0.0.1-prealpha.47",
-    "@dorgjelli-test/wasm-as": "0.0.1-prealpha.47",
+    "@web3api/cli": "0.0.1-prealpha.47",
+    "@web3api/ethereum-plugin-js": "0.0.1-prealpha.47",
+    "@web3api/wasm-as": "0.0.1-prealpha.47",
     "ethers": "5.0.8",
     "js-yaml": "3.14.0"
   }

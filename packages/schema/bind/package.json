@@ -1,5 +1,5 @@
 {
-  "name": "@dorgjelli-test/schema-bind",
+  "name": "@web3api/schema-bind",
   "description": "Web3API Schema Binding",
   "version": "0.0.1-prealpha.49",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "copy:templates": "copyfiles -u 1 src/**/*.mustache build/"
   },
   "dependencies": {
-    "@dorgjelli-test/schema-parse": "0.0.1-prealpha.47",
+    "@web3api/schema-parse": "0.0.1-prealpha.47",
     "mustache": "4.0.1"
   },
   "devDependencies": {
