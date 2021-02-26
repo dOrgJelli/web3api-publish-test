@@ -6,3 +6,45 @@ x don't publish __test__ folder
 x make sure all published packages are required packages
 - change name back to @web3api and migrate this setup to the main repo
 - squash commit history
+
+
+      - name: Building Release PR...
+        if: ${{env.TAG_EXISTS}} == 'false'
+        uses: actions/github-script@0.8.0
+        with:
+          github-token: ${{secrets.WEB3_API_BUILD_BOT_PAT}}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '[Building Release PR](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}) (`${{env.RELEASE_VERSION}}`)'
+            })
+
+      - name: Release Already Exists...
+        if: ${{env.TAG_EXISTS}} == 'true'
+        uses: actions/github-script@0.8.0
+        with:
+          github-token: ${{secrets.WEB3_API_BUILD_BOT_PAT}}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '[Release Already Exists](https://api.github.com/repos/${{github.repository}}/git/ref/tags/${{env.RELEASE_VERSION}}) (`${{env.RELEASE_VERSION}}`)'
+            })
+
+
+
+- name: Release PR Created...
+        if: ${{env.TAG_EXISTS}} == 'false'
+        uses: actions/github-script@0.8.0
+        with:
+          github-token: ${{secrets.WEB3_API_BUILD_BOT_PAT}}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '**[Release PR Created](https://github.com/${{github.repository}}/pull/${{ steps.cpr.outputs.pull-request-number }}) (`${{env.RELEASE_VERSION}}`)**'
+            })
