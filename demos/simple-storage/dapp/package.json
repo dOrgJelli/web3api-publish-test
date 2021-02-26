@@ -1,7 +1,13 @@
 {
-  "name": "@dorgjelli-test/example-simple-storage-dapp",
+  "name": "@dorgjelli-test/demo-simple-storage-dapp",
+  "description": "Web3API SimpleStorage dApp Demo",
   "private": true,
-  "version": "0.0.1-prealpha.47",
+  "version": "0.0.1-prealpha.46",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/web3-api/monorepo.git"
+  },
   "dependencies": {
     "@dorgjelli-test/client-js": "0.0.1-prealpha.47",
     "react": "^16.13.1",

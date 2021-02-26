@@ -1,7 +1,12 @@
 {
   "name": "root",
+  "description": "Web3API Monorepo",
   "license": "MIT",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/web3-api/monorepo.git"
+  },
   "workspaces": {
     "packages": [
       "./packages/**/*",

@@ -1,8 +1,13 @@
 {
-  "name": "@dorgjelli-test/example-simple-storage",
+  "name": "@dorgjelli-test/demo-simple-storage",
+  "description": "Web3API SimpleStorage Demo",
   "private": true,
   "version": "0.0.1-prealpha.47",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/web3-api/monorepo.git"
+  },
   "scripts": {
     "build": "npx w3 build",
     "test:env:up": "npx w3 test-env up && yarn contracts:deploy",

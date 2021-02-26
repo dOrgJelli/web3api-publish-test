@@ -1,15 +1,19 @@
 {
   "name": "@dorgjelli-test/http-plugin-js",
-  "description": "HTTP plugin enabling invocating http methods through web3api",
-  "version": "0.0.1-prealpha.47",
+  "description": "Web3API HTTP Javascript Plugin",
+  "version": "0.0.1-prealpha.46",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/web3-api/monorepo.git"
+  },
   "main": "build/index.js",
   "files": [
     "build",
     "schema.graphql"
   ],
   "scripts": {
-    "build": "rimraf ./build && tsc",
+    "build": "rimraf ./build && tsc --project tsconfig.build.json",
     "lint": "eslint --color --ext .ts src/",
     "lint:fix": "eslint --color --fix --ext .ts src/",
     "test": "jest --passWithNoTests --runInBand --verbose",
