@@ -20,7 +20,7 @@
     "copy:templates": "copyfiles -u 1 src/**/*.mustache build/"
   },
   "dependencies": {
-    "@dorgjelli-test/schema-parse": "0.0.1-prealpha.46",
+    "@dorgjelli-test/schema-parse": "0.0.1-prealpha.47",
     "mustache": "4.0.1"
   },
   "devDependencies": {
