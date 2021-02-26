@@ -8,7 +8,7 @@ jobs:
     if: |
       github.event.issue.pull_request &&
       startsWith(github.event.comment.body, '/workflows/release-pr') &&
-      github.event.comment.user.login != web3-api-build-bot
+      github.event.comment.user.login != 'web3-api-build-bot'
     runs-on: ubuntu-18.04
     steps:
       - name: Set env.BOT to Build Bot's Username
